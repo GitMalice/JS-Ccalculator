@@ -2,8 +2,7 @@ let display_value = "";
 let screen = document.querySelector(".screen");
 let numbers = [];
 let operationsList = [];
-let tempResult;
-let answer;
+let result;
 
 let key_1 = document.querySelector(".numbers ul li:nth-of-type(1)");
 let key_2 = document.querySelector(".numbers ul li:nth-of-type(2)");
@@ -154,6 +153,13 @@ equals.addEventListener("click", () => {
   console.log("result:");
   console.log(numbers);
   console.log(operationsList);
+
+  result = parseInt(numbers[0]);
+
+  for (let a = 0; a < operationsList.length; a++) {
+    result = operate(result, parseInt(numbers[a + 1]), operationsList[a]);
+    console.log(result);
+  }
 
   numbers = [];
   operationsList = [];
