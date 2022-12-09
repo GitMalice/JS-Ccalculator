@@ -143,9 +143,12 @@ plus.addEventListener("click", () => {
   if (display_value !== "") {
     store(display_value);
     operationsList.push("add");
-    console.log(operationsList);
-    console.log(numbers);
   }
+  // if (numbers.length > 1) {
+  //   store(display_value);
+  //   calculate();
+  //   resultDisplayed = true;
+  // }
 });
 
 minus.addEventListener("click", () => {
@@ -171,9 +174,16 @@ divided.addEventListener("click", () => {
 
 equals.addEventListener("click", () => {
   store(display_value);
+  calculate();
+
+  numbers = [];
+  operationsList = [];
+  resultDisplayed = true;
+});
+
+function calculate() {
   result = parseInt(numbers[0]);
   if (numbers[numbers.length - 1] == "") {
-    console.log("woopsie");
     for (let a = 0; a < operationsList.length - 1; a++) {
       result = operate(result, parseInt(numbers[a + 1]), operationsList[a]);
     }
@@ -188,10 +198,7 @@ equals.addEventListener("click", () => {
     result = result.toPrecision(12);
   }
 
+  resultDisplayed = true;
   display_value = result;
   screen.innerText = display_value;
-
-  numbers = [];
-  operationsList = [];
-  resultDisplayed = true;
-});
+}
