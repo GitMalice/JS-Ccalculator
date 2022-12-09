@@ -47,17 +47,17 @@ main {
 
 section {
   flex: .5;
-  min-width: 500px;
-  min-height: 700px;
+  min-width: 400px;
+  min-height: 550px;
   border: 10px groove var(--main-theme-color);border-radius: 10px;
   font-family: 'Digital';
+  padding: var(--margin-sides);
 }
 
 .screen {
-  margin: 50px var(--margin-sides) 5px;
+  /* margin: 50px var(--margin-sides) 5px; */
   min-width: 150px;
   min-height: 100px;
-  border: 5px inset var(--main-theme-color);
   font-size: 3em;
   color: var(--secondary-theme-color);
   text-shadow: 4px 4px var(--shadows-color);
@@ -65,30 +65,43 @@ section {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: var(--bg-color-keys);
-  border-radius: 10px;
+  background-color: var(--bg-color-keys);  
 }
 
-.keys, .numbers, .controls {
+.screen, .numbers ul li, .clear, .equals, .operations ul li {
   color: var(--secondary-theme-color);
+  border: 5px inset var(--main-theme-color);
+  border-radius: 10px;
 }
 
 .numbers ul {
   display: flex;
-  /* margin: 0 var(--margin-sides); */
-  margin: 0 10px;
-  flex-wrap: wrap;  
+  margin-top: 40px;
+  min-width: 40%;
+  min-height: 300px;
+  flex-wrap: wrap;
+  gap: 5%;
+  padding: 0;
 }
 
 .numbers ul li {
-  min-width: 50px;
-  min-height: 50px;
+  flex: 1;
+  min-width: 20%;
+  max-height: 60px;
   list-style: none;
-  border: 5px inset var(--main-theme-color);
   background-color: var(--bg-color-keys);
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2em;
+}
+
+.controls {
+  display: flex;
+}
+
+.operations ul li {
+  list-style: none;
+  min-width: 40%;
+  min-height: 20px;
 }
