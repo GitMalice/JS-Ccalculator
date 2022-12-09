@@ -49,7 +49,7 @@ main {
 section {
   flex: .5;
   min-width: 400px;
-  min-height: 550px;
+  min-height: 540px;
   border: 10px groove var(--main-theme-color);border-radius: 10px;
   font-family: 'Digital';
   padding: var(--margin-sides);
@@ -96,7 +96,7 @@ section {
   min-width: 40%;
   min-height: 300px;
   flex-wrap: wrap;
-  gap: var(--gap-value);
+  gap: 10%;
   padding: 0;
 }
 
@@ -114,13 +114,30 @@ section {
 }
 
 .operators {
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
+}
+
+.operators ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
 }
 
 .operators ul li{
   list-style: none;
-  margin: 0px;
-  padding: 0px;
+  flex: 1;
+  min-width: 50px;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-theme-color);
+  border: 5px inset var(--main-theme-color);
+  border-radius: 10px;
+  font-size: 1.5em;
 }
 
 
