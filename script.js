@@ -20,6 +20,8 @@ let plus = document.querySelector(".operators ul li:nth-of-type(1)");
 let minus = document.querySelector(".operators ul li:nth-of-type(2)");
 let per = document.querySelector(".operators ul li:nth-of-type(3)");
 let divided = document.querySelector(".operators ul li:nth-of-type(4)");
+let point = document.querySelector(".operators ul li:nth-of-type(5)");
+let backspace = document.querySelector(".operators ul li:nth-of-type(6)");
 
 let clear = document.querySelector(".clear");
 let equals = document.querySelector(".equals");
@@ -172,6 +174,13 @@ divided.addEventListener("click", () => {
   }
 });
 
+point.addEventListener("click", () => {
+  if (!display_value.includes(".")) {
+    display_value += ".";
+    screen.innerText = display_value;
+  }
+});
+
 equals.addEventListener("click", () => {
   store(display_value);
   calculate();
@@ -182,14 +191,14 @@ equals.addEventListener("click", () => {
 });
 
 function calculate() {
-  result = parseInt(numbers[0]);
+  result = parseFloat(numbers[0]);
   if (numbers[numbers.length - 1] == "") {
     for (let a = 0; a < operationsList.length - 1; a++) {
-      result = operate(result, parseInt(numbers[a + 1]), operationsList[a]);
+      result = operate(result, parseFloat(numbers[a + 1]), operationsList[a]);
     }
   } else {
     for (let a = 0; a < operationsList.length; a++) {
-      result = operate(result, parseInt(numbers[a + 1]), operationsList[a]);
+      result = operate(result, parseFloat(numbers[a + 1]), operationsList[a]);
     }
   }
 
