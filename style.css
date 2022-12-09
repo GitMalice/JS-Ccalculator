@@ -1,0 +1,94 @@
+:root {
+  --main-bg-color: rgb(52, 73, 15);
+  --main-theme-color: yellow;
+  --secondary-theme-color: white;
+  --shadows-color: grey;
+  --bg-color-keys: rgba(255, 255, 255, .2);
+  --margin-sides: 50px;
+}
+
+@font-face {
+  font-family: 'Gaming';
+  src: url(./font/ka1.ttf) format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Digital';
+  src: url(./font/DS-DIGIT.TTF) format('truetype');
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  background-color: var(--main-bg-color);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 3em;
+  margin-bottom: 2em;
+}
+
+h1 {
+  font-family: 'Gaming';
+  font-size: 5em;
+  font-weight: normal;
+  color: var(--main-theme-color);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin: 0 80px;  
+}
+
+section {
+  flex: .5;
+  min-width: 500px;
+  min-height: 700px;
+  border: 10px groove var(--main-theme-color);border-radius: 10px;
+  font-family: 'Digital';
+}
+
+.screen {
+  margin: 50px var(--margin-sides) 5px;
+  min-width: 150px;
+  min-height: 100px;
+  border: 5px inset var(--main-theme-color);
+  font-size: 3em;
+  color: var(--secondary-theme-color);
+  text-shadow: 4px 4px var(--shadows-color);
+  padding-right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--bg-color-keys);
+  border-radius: 10px;
+}
+
+.keys, .numbers, .controls {
+  color: var(--secondary-theme-color);
+}
+
+.numbers ul {
+  display: flex;
+  /* margin: 0 var(--margin-sides); */
+  margin: 0 10px;
+  flex-wrap: wrap;  
+}
+
+.numbers ul li {
+  min-width: 50px;
+  min-height: 50px;
+  list-style: none;
+  border: 5px inset var(--main-theme-color);
+  background-color: var(--bg-color-keys);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
