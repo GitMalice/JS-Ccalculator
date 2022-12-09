@@ -5,6 +5,7 @@
   --shadows-color: grey;
   --bg-color-keys: rgba(255, 255, 255, .2);
   --margin-sides: 50px;
+  --gap-value: 5%;
 }
 
 @font-face {
@@ -80,7 +81,7 @@ section {
   min-width: 40%;
   min-height: 300px;
   flex-wrap: wrap;
-  gap: 5%;
+  gap: var(--gap-value);
   padding: 0;
 }
 
@@ -96,12 +97,53 @@ section {
   font-size: 2em;
 }
 
+.operators ul li{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+
 .controls {
   display: flex;
+  /* max-height: 100px; */
+  justify-content: space-between;
+  gap: var(--gap-value);
+}
+
+.operations {
+  flex: 4;
+  padding: 0;
+}
+
+.controls div, .controls div ul li {
+  min-height: 60px;
+  font-size: 1.2em;
+}
+
+.operations ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  gap: var(--gap-value);
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
 }
 
 .operations ul li {
+  flex: 1;
   list-style: none;
-  min-width: 40%;
-  min-height: 20px;
+  /* min-width: 40px; */
+  min-height: 100%;
+}
+
+.clear {
+  flex: 1;
+}
+
+.equals {
+  flex: 2;
 }
