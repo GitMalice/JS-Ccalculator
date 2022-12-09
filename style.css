@@ -113,10 +113,6 @@ section {
   font-size: 2em;
 }
 
-.operators {
-  /* border: 1px solid pink; */
-}
-
 .operators ul {
   display: flex;
   flex-direction: column;
@@ -164,4 +160,35 @@ section {
 .equals {
   flex: 2;
   font-size: 4em;
+}
+
+.numbers ul li:hover {
+  background-color: yellow;
+  color: black;
+  font-size: 3em;
+  transition: all .3s ease-in;
+  cursor: pointer;
+}
+
+.operators ul li:hover {
+  background-color: yellow;
+  color: black;
+  font-size: 2.5em;
+  transition: all .3s ease-in;
+  cursor: pointer;
+}
+
+.equals:hover {
+  background-color: yellow;
+  color: black;
+  transition: all .3s ease-in;
+  cursor: pointer;
+}
+
+.clear:hover {
+  background-color: yellow;
+  color: black;
+  font-size: 1.5em;
+  transition: all .3s ease-in;
+  cursor: pointer;
 }
