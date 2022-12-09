@@ -2,6 +2,8 @@ let display_value = "";
 let screen = document.querySelector(".screen");
 let numbers = [];
 let operationsList = [];
+let tempResult;
+let answer;
 
 let key_1 = document.querySelector(".numbers ul li:nth-of-type(1)");
 let key_2 = document.querySelector(".numbers ul li:nth-of-type(2)");
@@ -19,6 +21,7 @@ let per = document.querySelector(".operators ul li:nth-of-type(3)");
 let divided = document.querySelector(".operators ul li:nth-of-type(4)");
 
 let clear = document.querySelector(".clear");
+let equals = document.querySelector(".equals");
 
 // function createNumbersVariables() {
 //   let key_number = [];
@@ -107,14 +110,15 @@ key_9.addEventListener("click", () => {
 clear.addEventListener("click", () => {
   display_value = "";
   screen.innerText = display_value;
+  numbers = [];
+  operationsList = [];
 });
 
 function store(value) {
   numbers.push(value);
   display_value = "";
   screen.innerText = display_value;
-  console.log(numbers);
-  console.log(operationsList);
+  // console.log(numbers);
 }
 
 plus.addEventListener("click", () => {
@@ -145,4 +149,23 @@ divided.addEventListener("click", () => {
   }
 });
 
-screen.innerText = display_value;
+equals.addEventListener("click", () => {
+  store(display_value);
+  console.log("result:");
+  console.log(numbers);
+  console.log(operationsList);
+
+  numbers = [];
+  operationsList = [];
+
+  // tempResult = numbers[0];
+  // for (let a = 0; a < operationsList.length; a++) {
+  //   tempResult = operate(tempResult, numbers[a + 1], operationsList[a]);
+  //   return tempResult;
+  // }
+  // display_value = tempResult;
+  // screen.innerText = display_value;
+  // console.log(tempResult);
+});
+
+// screen.innerText = display_value;
