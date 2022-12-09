@@ -150,16 +150,18 @@ divided.addEventListener("click", () => {
 
 equals.addEventListener("click", () => {
   store(display_value);
-  console.log("result:");
-  console.log(numbers);
-  console.log(operationsList);
+  // console.log("result:");
+  // console.log(numbers);
+  // console.log(operationsList);
 
   result = parseInt(numbers[0]);
 
   for (let a = 0; a < operationsList.length; a++) {
     result = operate(result, parseInt(numbers[a + 1]), operationsList[a]);
-    console.log(result);
+    // console.log(result);
   }
+  display_value = result;
+  screen.innerText = display_value;
 
   numbers = [];
   operationsList = [];
