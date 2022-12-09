@@ -69,6 +69,42 @@ function operate(operandA, operandB, operation) {
   }
 }
 
+function store(value) {
+  numbers.push(value);
+  display_value = "";
+  screen.innerText = display_value;
+}
+
+function check() {
+  if (resultDisplayed) {
+    resultDisplayed = false;
+    display_value = "";
+    screen.innerText = display_value;
+  }
+}
+
+function calculate() {
+  result = parseFloat(numbers[0]);
+  if (numbers[numbers.length - 1] == "") {
+    for (let a = 0; a < operationsList.length - 1; a++) {
+      result = operate(result, parseFloat(numbers[a + 1]), operationsList[a]);
+    }
+  } else {
+    for (let a = 0; a < operationsList.length; a++) {
+      result = operate(result, parseFloat(numbers[a + 1]), operationsList[a]);
+    }
+  }
+
+  console.log(result.toString().length);
+  if (result.toString().length > 12) {
+    result = result.toPrecision(12);
+  }
+
+  resultDisplayed = true;
+  display_value = result;
+  screen.innerText = display_value;
+}
+
 key_1.addEventListener("click", () => {
   check();
   display_value += "1";
@@ -127,20 +163,6 @@ clear.addEventListener("click", () => {
   operationsList = [];
 });
 
-function store(value) {
-  numbers.push(value);
-  display_value = "";
-  screen.innerText = display_value;
-}
-
-function check() {
-  if (resultDisplayed) {
-    resultDisplayed = false;
-    display_value = "";
-    screen.innerText = display_value;
-  }
-}
-
 plus.addEventListener("click", () => {
   if (display_value !== "") {
     store(display_value);
@@ -175,10 +197,18 @@ divided.addEventListener("click", () => {
 });
 
 point.addEventListener("click", () => {
-  if (!display_value.includes(".")) {
-    display_value += ".";
-    screen.innerText = display_value;
+  if (display_value != "" && !resultDisplayed) {
+    if (!display_value.includes(".")) {
+      display_value += ".";
+      screen.innerText = display_value;
+    }
   }
+});
+
+backspace.addEventListener("click", () => {
+  display_value = display_value.toString().slice(0, -1);
+  console.log(display_value);
+  screen.innerText = display_value;
 });
 
 equals.addEventListener("click", () => {
@@ -189,25 +219,3 @@ equals.addEventListener("click", () => {
   operationsList = [];
   resultDisplayed = true;
 });
-
-function calculate() {
-  result = parseFloat(numbers[0]);
-  if (numbers[numbers.length - 1] == "") {
-    for (let a = 0; a < operationsList.length - 1; a++) {
-      result = operate(result, parseFloat(numbers[a + 1]), operationsList[a]);
-    }
-  } else {
-    for (let a = 0; a < operationsList.length; a++) {
-      result = operate(result, parseFloat(numbers[a + 1]), operationsList[a]);
-    }
-  }
-
-  console.log(result.toString().length);
-  if (result.toString().length > 12) {
-    result = result.toPrecision(12);
-  }
-
-  resultDisplayed = true;
-  display_value = result;
-  screen.innerText = display_value;
-}
