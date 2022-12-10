@@ -82,6 +82,13 @@ function check() {
   }
 }
 
+function reduce() {
+  console.log(display_value.length);
+  if (display_value.length > 12) {
+    display_value = display_value.slice(0, -1);
+  }
+}
+
 function calculate() {
   result = parseFloat(numbers[0]);
   if (numbers[numbers.length - 1] == "") {
@@ -107,60 +114,70 @@ function calculate() {
 function event1() {
   check();
   display_value += "1";
+  reduce();
   screen.innerText = display_value;
 }
 
 function event2() {
   check();
   display_value += "2";
+  reduce();
   screen.innerText = display_value;
 }
 
 function event3() {
   check();
   display_value += "3";
+  reduce();
   screen.innerText = display_value;
 }
 
 function event4() {
   check();
   display_value += "4";
+  reduce();
   screen.innerText = display_value;
 }
 
 function event5() {
   check();
   display_value += "5";
+  reduce();
   screen.innerText = display_value;
 }
 
 function event6() {
   check();
   display_value += "6";
+  reduce();
   screen.innerText = display_value;
 }
 
 function event7() {
   check();
   display_value += "7";
+  reduce();
   screen.innerText = display_value;
 }
 
 function event8() {
   check();
   display_value += "8";
+  reduce();
   screen.innerText = display_value;
 }
 
 function event9() {
   check();
   display_value += "9";
+  reduce();
   screen.innerText = display_value;
 }
 
 function event0() {
   check();
   display_value += "0";
+  reduce();
   screen.innerText = display_value;
 }
 
