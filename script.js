@@ -71,8 +71,8 @@ function operate(operandA, operandB, operation) {
 
 function store(value) {
   numbers.push(value);
-  display_value = "";
-  screen.innerText = display_value;
+  calculate();
+  // screen.innerText = display_value;
 }
 
 function check() {
