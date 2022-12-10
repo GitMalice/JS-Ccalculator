@@ -49,6 +49,7 @@ main {
 section {
   flex: .5;
   min-width: 400px;
+  max-width: 550px;
   min-height: 600px;
   border: 10px groove var(--main-theme-color);border-radius: 10px;
   font-family: 'Digital';
