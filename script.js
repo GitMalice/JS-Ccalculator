@@ -72,7 +72,6 @@ function operate(operandA, operandB, operation) {
 function store(value) {
   numbers.push(value);
   calculate();
-  // screen.innerText = display_value;
 }
 
 function check() {
@@ -177,11 +176,6 @@ function eventAdd() {
     store(display_value);
     operationsList.push("add");
   }
-  // if (numbers.length > 1) {
-  //   store(display_value);
-  //   calculate();
-  //   resultDisplayed = true;
-  // }
 }
 
 function eventSubstract() {
