@@ -48,7 +48,6 @@ main {
 }
 
 section {
-  /* background-color: var(--main-bg-color); */
   background: url(./img/green.jpg);
   flex: .5;
   min-width: 400px;
