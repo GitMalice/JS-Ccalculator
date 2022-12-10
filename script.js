@@ -31,22 +31,18 @@ let numbersSelect = document.querySelector(".numbers");
 let resultDisplayed;
 
 function add(operandA, operandB) {
-  console.log(operandA + operandB);
   return operandA + operandB;
 }
 
 function substract(operandA, operandB) {
-  console.log(operandA - operandB);
   return operandA - operandB;
 }
 
 function multiply(operandA, operandB) {
-  console.log(operandA * operandB);
   return operandA * operandB;
 }
 
 function divide(operandA, operandB) {
-  console.log(operandA / operandB);
   return operandA / operandB;
 }
 
@@ -83,7 +79,6 @@ function check() {
 }
 
 function reduce() {
-  console.log(display_value.length);
   if (display_value.length > 12) {
     display_value = display_value.slice(0, -1);
   }
@@ -91,7 +86,11 @@ function reduce() {
 
 function calculate() {
   result = parseFloat(numbers[0]);
-  if (numbers[numbers.length - 1] == "") {
+  console.log(numbers);
+  if (
+    numbers[numbers.length - 1] == "" ||
+    numbers.length == operationsList.length
+  ) {
     for (let a = 0; a < operationsList.length - 1; a++) {
       result = operate(result, parseFloat(numbers[a + 1]), operationsList[a]);
     }
@@ -101,7 +100,6 @@ function calculate() {
     }
   }
 
-  console.log(result.toString().length);
   if (result.toString().length > 12) {
     result = result.toPrecision(12);
   }
@@ -227,12 +225,13 @@ function eventPoint() {
 
 function eventBackspace() {
   display_value = display_value.toString().slice(0, -1);
-  console.log(display_value);
   screen.innerText = display_value;
 }
 
 function eventEquals() {
-  store(display_value);
+  if (!resultDisplayed) {
+    store(display_value);
+  }
   calculate();
 
   numbers = [];
