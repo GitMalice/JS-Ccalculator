@@ -71,6 +71,12 @@ function store(value) {
 }
 
 function check() {
+  if (display_value == "0") {
+    console.log("yo");
+    display_value = display_value.slice(1, 1);
+    console.log(display_value);
+    screen.innerText = display_value;
+  }
   if (resultDisplayed) {
     resultDisplayed = false;
     display_value = "";
@@ -87,6 +93,17 @@ function reduce() {
 function calculate() {
   result = parseFloat(numbers[0]);
   console.log(numbers);
+  // if (numbers.includes("0") && operationsList.includes("divide")) {
+  //   console.log("catched zero error");
+  //   let zero = "0";
+  //   console.log(numbers.findIndex(zero));
+  //   let indexNumbers = numbers.findIndex("0");
+  //   let indexOperation = operationsList.findIndex("divide");
+  //   console.log(indexOperation);
+  //   if (indexNumbers == indexOperation - 1) {
+  //     result = "Zero error";
+  //   }
+  // }
   if (
     numbers[numbers.length - 1] == "" ||
     numbers.length == operationsList.length
@@ -174,7 +191,9 @@ function event9() {
 
 function event0() {
   check();
-  display_value += "0";
+  if (display_value != "0") {
+    display_value += "0";
+  }
   reduce();
   screen.innerText = display_value;
 }
